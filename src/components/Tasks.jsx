@@ -6,11 +6,16 @@ const Tasks = (props) => {
     <ul>
       {props.tasks.map((task, index) => (
         <li key={index}>
-          {task} 
+          {task}
+          <button onClick={ () => props.removeTask(index) }> 
+            x
+          </button>
         </li>
       ))}
     </ul>
   )
 }
+
+// line 10 wrapping it in anonymous function prevents it firing right away
 
 export default Tasks
